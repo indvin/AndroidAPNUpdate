@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
+        "source": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Vinod_Work\\Android_example\\EMDK-Android-Samples-master\\ProfileGprsMgrSample1\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    }
+]
