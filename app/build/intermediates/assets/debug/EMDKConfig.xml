@@ -10,4 +10,24 @@
       <parm name="GprsAction" value="3"/>
     </characteristic>
   </characteristic>
+  <characteristic type="Profile">
+    <parm name="ProfileName" value="ii"/>
+    <parm name="ModifiedDate" value="2021-08-02 05:59:24"/>
+    <parm name="TargetSystemVersion" value="4.2"/>
+    <characteristic type="GprsMgr" version="4.2">
+      <parm name="emdk_name" value="vinod"/>
+      <parm name="GprsAction" value="1"/>
+      <parm name="GprsCarrier" value="0"/>
+      <characteristic type="gprs-details">
+        <parm name="ApnName" value="vin"/>
+        <parm name="ReplaceIfExisting" value="0"/>
+        <parm name="MakeDefault" value="1"/>
+      </characteristic>
+      <characteristic type="custom-details">
+        <parm name="CustomAccessPoint" value="vvv"/>
+        <parm name="CustomUserName" value="vvvvv"/>
+        <parm name="CustomPassword" value=""/>
+      </characteristic>
+    </characteristic>
+  </characteristic>
 </wap-provisioningdoc>
