@@ -13,7 +13,7 @@
         <uses-library android:name="com.symbol.emdk" />
 
         <activity
-            android:name="com.symbol.profilegprsmgrsample1.MainActivity"
+            android:name="com.symbol.profilegprsmgrsample1.APNProfileActivity"
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
@@ -22,6 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.symbol.profilegprsmgrsample1.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
     </application>
 
 </manifest>

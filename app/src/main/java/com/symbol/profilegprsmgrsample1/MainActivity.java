@@ -19,6 +19,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Xml;
 import android.view.Menu;
 import android.view.View;
@@ -61,7 +62,7 @@ public class MainActivity extends Activity implements EMDKListener{
     // Provides error string with type/name + description
     private String errorString = "";
 
-    private enum Action
+    enum Action
     {
         ADD_REPLACE(1),
         REMOVE(2);
