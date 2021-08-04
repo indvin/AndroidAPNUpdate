@@ -78,8 +78,7 @@ public class APNProfileActivity extends Activity implements EMDKManager.EMDKList
         } else {
             //EMDKManager object creation failed
         }
-
-
+        updateProfile_XMLString();
     }
 
     @Override
