@@ -14,7 +14,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
 
 
@@ -186,5 +187,18 @@
         android:text="Make Default APN"
         android:textSize="14dp" />
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/buttonSet1"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TextViewPassword"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Sync Settings" />
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

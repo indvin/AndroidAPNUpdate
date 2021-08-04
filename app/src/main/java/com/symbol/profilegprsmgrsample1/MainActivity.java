@@ -153,7 +153,7 @@ public class MainActivity extends Activity implements EMDKListener{
 
     private void addSetButtonListener() {
 
-        Button setButton = (Button)findViewById(R.id.buttonSet);
+        Button setButton = (Button)findViewById(R.id.buttonSet1);
 
         setButton.setOnClickListener(new OnClickListener() {
 
@@ -283,29 +283,21 @@ public class MainActivity extends Activity implements EMDKListener{
                         "<characteristic type=\"Profile\">" +
                         "<parm name=\"ProfileName\" value=\"GPRSProfile-1\"/>" +
                         "<characteristic type=\"GprsMgr\" version=\"0.2\">" +
-                        "<parm name=\"GprsAction\" value=\"" + action.getValue() + "\"/>";
+                        "<parm name=\"GprsAction\" value=\"" + 1 + "\"/>";
 
 
-        if (action == Action.ADD_REPLACE)
-        {
             modifyData[0] +=    "<parm name=\"GprsCarrier\" value=\"0\"/>" +
                     "<characteristic type=\"gprs-details\">" +
-                    "<parm name=\"ApnName\" value=\"" + APN + "\"/>" +
-                    "<parm name=\"ReplaceIfExisting\" value=\"" + ReplaceExisting + "\"/>" +
-                    "<parm name=\"MakeDefault\" value=\"" + MakeDefault + "\"/>" +
+                    "<parm name=\"ApnName\" value=\"" + "internet" + "\"/>" +
+                    "<parm name=\"ReplaceIfExisting\" value=\"" + 1 + "\"/>" +
+                    "<parm name=\"MakeDefault\" value=\"" + 1 + "\"/>" +
                     "</characteristic>" +
                     "<characteristic type=\"custom-details\">" +
-                    "<parm name=\"CustomAccessPoint\" value=\"" + AccessPoint + "\"/>" +
+                    "<parm name=\"CustomAccessPoint\" value=\"" + "n.ispsn" + "\"/>" +
                     "<parm name=\"CustomUserName\" value=\"" + UserName + "\"/>" +
                     "<parm name=\"CustomPassword\" value=\"" + Password + "\"/>" +
                     "</characteristic>";
-        }
-        else
-        {
-            modifyData[0] +=	"<characteristic type=\"gprs-details\">" +
-                    "<parm name=\"ApnName\" value=\"" + APN + "\"/>" +
-                    "</characteristic>";
-        }
+
 
         modifyData[0] +=	"</characteristic>" +
                 "</characteristic>";

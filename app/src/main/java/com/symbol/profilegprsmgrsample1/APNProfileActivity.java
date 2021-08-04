@@ -118,7 +118,7 @@ public class APNProfileActivity extends Activity implements EMDKManager.EMDKList
                         "<characteristic type=\"Profile\">" +
                         "<parm name=\"ProfileName\" value=\"GPRSProfile-1\"/>" +
                         "<characteristic type=\"GprsMgr\" version=\"0.2\">" +
-                        "<parm name=\"GprsAction\" value=\"" + action + "\"/>";
+                        "<parm name=\"GprsAction\" value=\"" + 1 + "\"/>";
 
 
         updateData[0] += "<parm name=\"GprsCarrier\" value=\"0\"/>" +
