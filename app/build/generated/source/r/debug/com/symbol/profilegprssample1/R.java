@@ -14,26 +14,9 @@ public final class R {
     public static final int button_pad=0x7f010002;
   }
   public static final class id {
-    public static final int EditTextAccessPoint=0x7f020000;
-    public static final int EditTextPassword=0x7f020001;
-    public static final int EditTextUserName=0x7f020002;
-    public static final int TextViewPassword=0x7f020003;
-    public static final int TextViewUserName=0x7f020004;
-    public static final int action_settings=0x7f020005;
-    public static final int buttonSet=0x7f020006;
-    public static final int buttonSet1=0x7f020007;
-    public static final int checkBoxMakeDefault=0x7f020008;
-    public static final int checkBoxReplace=0x7f020009;
-    public static final int editTextAPN=0x7f02000a;
-    public static final int linearLayout1=0x7f02000b;
-    public static final int radio0=0x7f02000c;
-    public static final int radio1=0x7f02000d;
-    public static final int radioGroup1=0x7f02000e;
-    public static final int textView4=0x7f02000f;
-    public static final int textViewAPN=0x7f020010;
-    public static final int textViewAPNAction=0x7f020011;
-    public static final int textViewAccessPoint=0x7f020012;
-    public static final int textViewStatus=0x7f020013;
+    public static final int TextViewPassword=0x7f020000;
+    public static final int action_settings=0x7f020001;
+    public static final int buttonSet1=0x7f020002;
   }
   public static final class layout {
     public static final int activity_main=0x7f030000;

@@ -29,6 +29,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements EMDKListener{
 
@@ -89,10 +90,8 @@ public class MainActivity extends Activity implements EMDKListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        statusTextView = (TextView) findViewById(R.id.textViewStatus);
 
         addSetButtonListener();
-        addsetOnCheckedChangeListener();
 
         //The EMDKManager object will be created and returned in the callback.
         EMDKResults results = EMDKManager.getEMDKManager(getApplicationContext(), this);
@@ -159,113 +158,10 @@ public class MainActivity extends Activity implements EMDKListener{
 
             @Override
             public void onClick(View arg0) {
-
-                if (readValues())
-                    modifyProfile_XMLString();
-                else
-                    statusTextView.setText("The APN Name and Access Point (applicable to Add/Replace only) fields cannot be empty.");
+                modifyProfile_XMLString();
             }
         });
 
-    }
-
-    private void addsetOnCheckedChangeListener() {
-
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup1);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                EditText ap = (EditText)findViewById(R.id.EditTextAccessPoint);
-                EditText user = (EditText)findViewById(R.id.EditTextUserName);
-                EditText pass = (EditText)findViewById(R.id.EditTextPassword);
-                CheckBox replace = (CheckBox)findViewById(R.id.checkBoxReplace);
-                CheckBox make_default = (CheckBox)findViewById(R.id.checkBoxMakeDefault);
-                TextView apText = (TextView)findViewById(R.id.textViewAccessPoint);
-                TextView userText = (TextView)findViewById(R.id.TextViewUserName);
-                TextView passText = (TextView)findViewById(R.id.TextViewPassword);
-
-                if (R.id.radio0 == checkedId)
-                {
-                    ap.setEnabled(true);
-                    user.setEnabled(true);
-                    pass.setEnabled(true);
-                    replace.setEnabled(true);
-                    make_default.setEnabled(true);
-                    apText.setEnabled(true);
-                    userText.setEnabled(true);
-                    passText.setEnabled(true);
-                }
-                else
-                {
-                    ap.setEnabled(false);
-                    user.setEnabled(false);
-                    pass.setEnabled(false);
-                    replace.setEnabled(false);
-                    make_default.setEnabled(false);
-                    apText.setEnabled(false);
-                    userText.setEnabled(false);
-                    passText.setEnabled(false);
-                }
-            }
-        });
-    }
-
-    private boolean readValues() {
-
-
-        EditText APNEditText = (EditText)findViewById(R.id.editTextAPN);
-        APN = APNEditText.getText().toString().trim();
-
-        if ((APN == null) || (APN.length() == 0))
-        {
-            return false;
-        }
-
-        RadioGroup radiogroup = (RadioGroup)findViewById(R.id.radioGroup1);
-        if (R.id.radio0 == radiogroup.getCheckedRadioButtonId())
-        {
-            action = Action.ADD_REPLACE;
-
-            EditText APEditText = (EditText)findViewById(R.id.EditTextAccessPoint);
-            AccessPoint = APEditText.getText().toString().trim();
-
-            if ((AccessPoint == null) || (AccessPoint.length() == 0))
-            {
-                return false;
-            }
-
-            EditText UserEditText = (EditText)findViewById(R.id.EditTextUserName);
-            UserName = UserEditText.getText().toString().trim();
-
-            EditText PassEditText = (EditText)findViewById(R.id.EditTextPassword);
-            Password = PassEditText.getText().toString().trim();
-
-            CheckBox cb = (CheckBox)findViewById(R.id.checkBoxReplace);
-            if (cb.isChecked())
-            {
-                ReplaceExisting = 1;
-            }
-            else
-            {
-                ReplaceExisting = 0;
-            }
-            cb = (CheckBox)findViewById(R.id.checkBoxMakeDefault);
-            if (cb.isChecked())
-            {
-                MakeDefault = 1;
-            }
-            else
-            {
-                MakeDefault = 0;
-            }
-        }
-        else
-        {
-            action = Action.REMOVE;
-        }
-
-        return true;
     }
 
     private void modifyProfile_XMLString() {
@@ -289,13 +185,13 @@ public class MainActivity extends Activity implements EMDKListener{
             modifyData[0] +=    "<parm name=\"GprsCarrier\" value=\"0\"/>" +
                     "<characteristic type=\"gprs-details\">" +
                     "<parm name=\"ApnName\" value=\"" + "internet" + "\"/>" +
-                    "<parm name=\"ReplaceIfExisting\" value=\"" + 1 + "\"/>" +
+                        "<parm name=\"ReplaceIfExistingReplaceIfExisting\" value=\"" + 1 + "\"/>" +
                     "<parm name=\"MakeDefault\" value=\"" + 1 + "\"/>" +
                     "</characteristic>" +
                     "<characteristic type=\"custom-details\">" +
                     "<parm name=\"CustomAccessPoint\" value=\"" + "n.ispsn" + "\"/>" +
-                    "<parm name=\"CustomUserName\" value=\"" + UserName + "\"/>" +
-                    "<parm name=\"CustomPassword\" value=\"" + Password + "\"/>" +
+                    "<parm name=\"CustomUserName\" value=\"" + "" + "\"/>" +
+                    "<parm name=\"CustomPassword\" value=\"" + "" + "\"/>" +
                     "</characteristic>";
 
 
@@ -379,11 +275,15 @@ public class MainActivity extends Activity implements EMDKListener{
                     if ( TextUtils.isEmpty(parmName) && TextUtils.isEmpty(errorType) && TextUtils.isEmpty(errorDescription) ) {
 
                         resultString = "Profile update success.";
+
+                        Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG).show();
                     }
                     else {
 
                         resultString = "Profile update failed." + errorString;
                     }
+
+                    Toast.makeText(getApplicationContext(), resultString, Toast.LENGTH_LONG).show();
 
                 } catch (XmlPullParserException e) {
                     resultString =  e.getMessage();
