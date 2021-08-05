@@ -8,6 +8,7 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="26" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission
         android:name="com.symbol.emdk.permission.EMDK"
         android:required="false" />

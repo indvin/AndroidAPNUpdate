@@ -15,6 +15,9 @@ import com.symbol.emdk.ProfileManager;
 import com.symbol.emdk.EMDKManager.EMDKListener;
 import com.symbol.profilegprssample1.R;
 
+import android.app.AlertDialog;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -85,14 +88,19 @@ public class MainActivity extends Activity implements EMDKListener{
     private Action action = Action.ADD_REPLACE;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    private void checkForTheApplicationPreConditions() {
 
+        // 1. Is Internet connected. If not connected show dialog
+        if (!isInternetConnected()) {
+            showDialog("Internet Status", "Internet not available on this device. Please check the internet.");
+        }
 
-        addSetButtonListener();
+        //Initialize EMDK SDK
+        initializeEMDKSDK();
 
+    }
+
+    private void initializeEMDKSDK() {
         //The EMDKManager object will be created and returned in the callback.
         EMDKResults results = EMDKManager.getEMDKManager(getApplicationContext(), this);
 
@@ -100,8 +108,18 @@ public class MainActivity extends Activity implements EMDKListener{
         if(results.statusCode == EMDKResults.STATUS_CODE.SUCCESS) {
             //EMDKManager object creation success
         }else {
-            //EMDKManager object creation failed
+            showDialog("EMDK SDK Error", results.getExtendedStatusMessage());
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        addSetButtonListener();
+        checkForTheApplicationPreConditions();
     }
 
     @Override
@@ -149,6 +167,8 @@ public class MainActivity extends Activity implements EMDKListener{
         profileManager = (ProfileManager) emdkManager.getInstance(EMDKManager.FEATURE_TYPE.PROFILE);
 
     }
+
+
 
     private void addSetButtonListener() {
 
@@ -292,5 +312,35 @@ public class MainActivity extends Activity implements EMDKListener{
 
             statusTextView.setText(resultString);
         }
+    }
+
+
+
+    public void showDialog(String title, String messaage){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage(messaage)
+                .setTitle(title);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public boolean isInternetConnected() {
+        ConnectivityManager cm =
+                (ConnectivityManager)getApplication().getSystemService(getApplicationContext().CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+
+        return isConnected;
+    }
+
+    public boolean isMeteredConnection() {
+        ConnectivityManager cm =
+                (ConnectivityManager)getApplicationContext().getSystemService(getApplicationContext().CONNECTIVITY_SERVICE);
+        boolean isMetered = cm.isActiveNetworkMetered();
+        return isMetered;
     }
 }
