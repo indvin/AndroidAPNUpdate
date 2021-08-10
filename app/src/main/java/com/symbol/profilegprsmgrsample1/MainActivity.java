@@ -45,8 +45,6 @@ public class MainActivity extends Activity implements EMDKListener{
     //Declare a variable to store EMDKManager object
     private EMDKManager emdkManager = null;
 
-    private TextView statusTextView = null;
-
     private String APN = "";
     private String AccessPoint = "";
     private String UserName = "";
@@ -152,16 +150,12 @@ public class MainActivity extends Activity implements EMDKListener{
             emdkManager = null;
         }
 
-        statusTextView.setText("Status: " + "EMDK closed unexpectedly! Please close and restart the application.");
     }
 
     @Override
     public void onOpened(EMDKManager emdkManager) {
 
-        //This callback will be issued when the EMDK is ready to use.
-        statusTextView.setText("EMDK open success.");
-
-        this.emdkManager = emdkManager;
+       this.emdkManager = emdkManager;
 
         //Get the ProfileManager object to process the profiles
         profileManager = (ProfileManager) emdkManager.getInstance(EMDKManager.FEATURE_TYPE.PROFILE);
@@ -186,7 +180,6 @@ public class MainActivity extends Activity implements EMDKListener{
 
     private void modifyProfile_XMLString() {
 
-        statusTextView.setText("");
         errorType = "";
         parmName = "";
         errorDescription = "";
@@ -205,13 +198,15 @@ public class MainActivity extends Activity implements EMDKListener{
             modifyData[0] +=    "<parm name=\"GprsCarrier\" value=\"0\"/>" +
                     "<characteristic type=\"gprs-details\">" +
                     "<parm name=\"ApnName\" value=\"" + "internet" + "\"/>" +
-                        "<parm name=\"ReplaceIfExistingReplaceIfExisting\" value=\"" + 1 + "\"/>" +
+                        "<parm name=\"ReplaceIfExisting\" value=\"" + 1 + "\"/>" +
                     "<parm name=\"MakeDefault\" value=\"" + 1 + "\"/>" +
                     "</characteristic>" +
                     "<characteristic type=\"custom-details\">" +
                     "<parm name=\"CustomAccessPoint\" value=\"" + "n.ispsn" + "\"/>" +
                     "<parm name=\"CustomUserName\" value=\"" + "" + "\"/>" +
                     "<parm name=\"CustomPassword\" value=\"" + "" + "\"/>" +
+                    "<parm name=\"CustomProtocol\" value=\"" + "3" + "\"/>" +
+                    "<parm name=\"CustomRoamingProtocol\" value=\"" + "3" + "\"/>" +
                     "</characteristic>";
 
 
@@ -310,7 +305,6 @@ public class MainActivity extends Activity implements EMDKListener{
                 }
             }
 
-            statusTextView.setText(resultString);
         }
     }
 
