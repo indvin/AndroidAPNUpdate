@@ -5,6 +5,7 @@
 package com.symbol.profilegprsmgrsample1;
 
 import java.io.StringReader;
+import java.lang.reflect.Method;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -16,11 +17,15 @@ import com.symbol.emdk.EMDKManager.EMDKListener;
 import com.symbol.profilegprssample1.R;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.telephony.CellLocation;
+import android.telephony.TelephonyManager;
+import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Xml;
@@ -35,6 +40,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements EMDKListener{
+
+    TextView headerText;
+    Button sim1;
+    Button sim2;
+    Button sim3;
+    Button sim4;
+    Button sim5;
+    Button sim6;
+    Button syncSettingsButton;
 
     //Assign the profile name used in EMDKConfig.xml
     private String profileName = "GPRSProfile-1";
@@ -95,7 +109,6 @@ public class MainActivity extends Activity implements EMDKListener{
 
         //Initialize EMDK SDK
         initializeEMDKSDK();
-
     }
 
     private void initializeEMDKSDK() {
@@ -115,8 +128,11 @@ public class MainActivity extends Activity implements EMDKListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Sim section UI
+        initializeUI();
+        initializeSimTest();
 
-        addSetButtonListener();
+        addSyncButtonListener();
         checkForTheApplicationPreConditions();
     }
 
@@ -164,11 +180,8 @@ public class MainActivity extends Activity implements EMDKListener{
 
 
 
-    private void addSetButtonListener() {
-
-        Button setButton = (Button)findViewById(R.id.buttonSet1);
-
-        setButton.setOnClickListener(new OnClickListener() {
+    private void addSyncButtonListener() {
+        syncSettingsButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -336,5 +349,145 @@ public class MainActivity extends Activity implements EMDKListener{
                 (ConnectivityManager)getApplicationContext().getSystemService(getApplicationContext().CONNECTIVITY_SERVICE);
         boolean isMetered = cm.isActiveNetworkMetered();
         return isMetered;
+    }
+
+
+//////////////////  sim section
+
+
+
+    private void initializeUI() {
+        headerText = findViewById(R.id.textView);
+        syncSettingsButton = findViewById(R.id.syncSettingsButton);
+
+        sim1 = findViewById(R.id.button1);
+        sim2 = findViewById(R.id.button2);
+        sim3 = findViewById(R.id.button3);
+        sim4 = findViewById(R.id.button4);
+        sim5 = findViewById(R.id.button5);
+        sim6 = findViewById(R.id.button6);
+
+
+        //Disable button visibility
+        syncSettingsButton.setVisibility(View.INVISIBLE);
+        syncSettingsButton.setVisibility(View.GONE);
+        sim1.setVisibility(View.GONE);
+        sim2.setVisibility(View.GONE);
+        sim3.setVisibility(View.GONE);
+        sim4.setVisibility(View.GONE);
+        sim5.setVisibility(View.GONE);
+        sim6.setVisibility(View.GONE);
+    }
+
+    public void initializeSimTest() {
+        GsmCellLocation cl = (GsmCellLocation) CellLocation.getEmpty();
+        CellLocation.requestLocationUpdate();
+
+
+        TelephonyManager telMngr = ((TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE));
+
+        int simcount = telMngr.getPhoneCount();
+        updatedSimButtonsUI(simcount, telMngr);
+        String s1 = telMngr.getSimOperatorName();
+        int s2 = telMngr.getPhoneCount();
+
+        Toast.makeText(this,s1,Toast.LENGTH_LONG).show();
+        Toast.makeText(this,""+s2,Toast.LENGTH_LONG).show();
+
+
+
+        try {
+            s1 = getDeviceIdBySlot2(this, "getNetworkOperatorName", 0);
+            Toast.makeText(this,s1,Toast.LENGTH_LONG).show();
+        } catch (CustomMethodNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void updatedSimButtonsUI(int simcount, TelephonyManager telephonyManager) {
+        for(int i=0; i<simcount; i++) {
+
+            if(i == 0) {
+                sim1.setText(telephonyManager.getNetworkOperatorName());
+                sim1.setVisibility(View.VISIBLE);
+                syncSettingsButton.setVisibility(View.VISIBLE);
+            }else if(i == 1) {
+                String sim2name = "Unknown"; // getDeviceIdBySlot(this, "getNetworkOperatorName",  i-1);
+                sim2.setText(sim2name);
+                sim2.setVisibility(View.VISIBLE);
+            }else if(i == 2) {
+                String sim3name = "Unknown"; // getDeviceIdBySlot(this, "getNetworkOperatorName",  i-1);
+                sim3.setText(sim3name);
+                sim3.setVisibility(View.VISIBLE);
+            }
+            //TODO: Implement other sim names here.
+
+        }
+
+    }
+
+    private static String getDeviceIdBySlot(Context context, String predictedMethodName, int slotID) throws CustomMethodNotFoundException {
+
+        String imsi = null;
+        TelephonyManager telephony = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        try {
+            Class<?> telephonyClass = Class.forName(telephony.getClass().getName());
+            Class<?>[] parameter = new Class[1];
+            parameter[0] = int.class;
+            Method getSimID = telephonyClass.getMethod(predictedMethodName, parameter);
+
+            Object[] obParameter = new Object[1];
+            obParameter[0] = slotID;
+            Object ob_phone = getSimID.invoke(telephony, obParameter);
+
+            if (ob_phone != null) {
+                imsi = ob_phone.toString();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new CustomMethodNotFoundException(predictedMethodName);
+        }
+
+        return imsi;
+    }
+
+    private static class CustomMethodNotFoundException extends Exception {
+        private static final long serialVersionUID = -996812356902545308L;
+
+        public CustomMethodNotFoundException(String info) {
+            super(info);
+        }
+
+    }
+
+    private static String getDeviceIdBySlot2(Context context, String predictedMethodName, int slotID) throws CustomMethodNotFoundException {
+
+        String imei = null;
+
+        TelephonyManager telephony = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+
+        try{
+
+            Class<?> telephonyClass = Class.forName(telephony.getClass().getName());
+
+            Class<?>[] parameter = new Class[1];
+            parameter[0] = int.class;
+            Method getSimID = telephonyClass.getMethod(predictedMethodName, parameter);
+
+            Object[] obParameter = new Object[1];
+            obParameter[0] = slotID;
+            Object ob_phone = getSimID.invoke(telephony, obParameter);
+
+            if(ob_phone != null){
+                imei = ob_phone.toString();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new CustomMethodNotFoundException(predictedMethodName);
+        }
+
+        return imei;
     }
 }

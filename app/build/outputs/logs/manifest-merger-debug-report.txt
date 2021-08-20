@@ -1,23 +1,23 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
 	package
 		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
 		INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
 		INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:11-69
@@ -31,46 +31,58 @@ ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprs
 		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:6:69-93
 	android:name
 		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:8:22-72
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:10:22-76
 application
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:8:5-34:19
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:15:5-41:19
 	android:label
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:18:9-41
 	android:icon
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:10:9-43
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:17:9-43
 	android:allowBackup
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:12:9-40
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:19:9-40
 uses-library#com.symbol.emdk
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:14:9-56
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:21:9-56
 	android:name
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:14:23-53
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:21:23-53
 activity#com.symbol.profilegprsmgrsample1.APNProfileActivity
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:16:9-21:20
-	android:screenOrientation
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:18:13-49
-	android:label
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:19:13-45
-	android:name
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:17:13-79
-activity#com.symbol.profilegprsmgrsample1.MainActivity
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:23:9-32:20
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:23:9-28:20
 	android:screenOrientation
 		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:25:13-49
 	android:label
 		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:26:13-45
 	android:name
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:24:13-73
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:24:13-79
+activity#com.symbol.profilegprsmgrsample1.MainActivity
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:30:9-39:20
+	android:screenOrientation
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:32:13-49
+	android:label
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:33:13-45
+	android:name
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:31:13-73
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:27:13-31:29
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:34:13-38:29
 action#android.intent.action.MAIN
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:30:27-74
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:37:27-74
 uses-sdk
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
