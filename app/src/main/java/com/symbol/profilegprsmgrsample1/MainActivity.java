@@ -6,6 +6,7 @@ package com.symbol.profilegprsmgrsample1;
 
 import java.io.StringReader;
 import java.lang.reflect.Method;
+import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -16,14 +17,21 @@ import com.symbol.emdk.ProfileManager;
 import com.symbol.emdk.EMDKManager.EMDKListener;
 import com.symbol.profilegprssample1.R;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.CellLocation;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
@@ -39,7 +47,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements EMDKListener{
+public class MainActivity extends AppCompatActivity implements EMDKListener{
 
     TextView headerText;
     Button sim1;
@@ -130,7 +138,8 @@ public class MainActivity extends Activity implements EMDKListener{
 
         //Sim section UI
         initializeUI();
-        initializeSimTest();
+        //initializeSimTest();
+        checkForTelephonyStatePermission();
 
         addSyncButtonListener();
         checkForTheApplicationPreConditions();
@@ -380,48 +389,35 @@ public class MainActivity extends Activity implements EMDKListener{
     }
 
     public void initializeSimTest() {
-        GsmCellLocation cl = (GsmCellLocation) CellLocation.getEmpty();
-        CellLocation.requestLocationUpdate();
 
+        SubscriptionManager subscriptionManager = (SubscriptionManager) this.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+        List<SubscriptionInfo> subscriptionInfos = subscriptionManager.getActiveSubscriptionInfoList();
+        int simcount = subscriptionInfos.size();//telMngr.getPhoneCount();
+        updatedSimButtonsUI(simcount, subscriptionInfos);
 
-        TelephonyManager telMngr = ((TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE));
-
-        int simcount = telMngr.getPhoneCount();
-        updatedSimButtonsUI(simcount, telMngr);
-        String s1 = telMngr.getSimOperatorName();
-        int s2 = telMngr.getPhoneCount();
-
-        Toast.makeText(this,s1,Toast.LENGTH_LONG).show();
-        Toast.makeText(this,""+s2,Toast.LENGTH_LONG).show();
-
-
-
-        try {
-            s1 = getDeviceIdBySlot2(this, "getNetworkOperatorName", 0);
-            Toast.makeText(this,s1,Toast.LENGTH_LONG).show();
-        } catch (CustomMethodNotFoundException e) {
-            e.printStackTrace();
-        }
+        Toast.makeText(this,""+simcount,Toast.LENGTH_LONG).show();
     }
 
-    private void updatedSimButtonsUI(int simcount, TelephonyManager telephonyManager) {
-        for(int i=0; i<simcount; i++) {
+    private String getSimDisplayName(String name, int index) {
+        if(name == null) return "Sim card "+index;
+        else return name;
 
+    }
+    private void updatedSimButtonsUI(int simcount, List<SubscriptionInfo> subscriptionInfos) {
+        for(int i=0; i<simcount; i++) {
             if(i == 0) {
-                sim1.setText(telephonyManager.getNetworkOperatorName());
+                sim1.setText(getSimDisplayName(subscriptionInfos.get(i).getDisplayName().toString(), i));
                 sim1.setVisibility(View.VISIBLE);
                 syncSettingsButton.setVisibility(View.VISIBLE);
             }else if(i == 1) {
-                String sim2name = "Unknown"; // getDeviceIdBySlot(this, "getNetworkOperatorName",  i-1);
-                sim2.setText(sim2name);
+
+                sim2.setText(getSimDisplayName(subscriptionInfos.get(i).getDisplayName().toString(), i));
                 sim2.setVisibility(View.VISIBLE);
             }else if(i == 2) {
-                String sim3name = "Unknown"; // getDeviceIdBySlot(this, "getNetworkOperatorName",  i-1);
-                sim3.setText(sim3name);
+                sim3.setText(getSimDisplayName(subscriptionInfos.get(i).getDisplayName().toString(), i));
                 sim3.setVisibility(View.VISIBLE);
             }
             //TODO: Implement other sim names here.
-
         }
 
     }
@@ -489,5 +485,57 @@ public class MainActivity extends Activity implements EMDKListener{
         }
 
         return imei;
+    }
+
+    ///Phone state permission
+    private final int REQUEST_PERMISSION_PHONE_STATE=1;
+    public void checkForTelephonyStatePermission() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.READ_PHONE_STATE)) {
+                showExplanation("Permission Needed", "Rationale", Manifest.permission.READ_PHONE_STATE, REQUEST_PERMISSION_PHONE_STATE);
+            } else {
+                requestPermission(Manifest.permission.READ_PHONE_STATE, REQUEST_PERMISSION_PHONE_STATE);
+            }
+        } else {
+            initializeSimTest();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode,
+            String permissions[],
+            int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PERMISSION_PHONE_STATE:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(MainActivity.this, "Permission Granted!", Toast.LENGTH_SHORT).show();
+                    initializeSimTest();
+                } else {
+                    Toast.makeText(MainActivity.this, "Permission Denied!", Toast.LENGTH_SHORT).show();
+                }
+        }
+    }
+
+    private void showExplanation(String title,
+                                 String message,
+                                 final String permission,
+                                 final int permissionRequestCode) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        requestPermission(permission, permissionRequestCode);
+                    }
+                });
+        builder.create().show();
+    }
+
+    private void requestPermission(String permissionName, int permissionRequestCode) {
+        ActivityCompat.requestPermissions(this,
+                new String[]{permissionName}, permissionRequestCode);
     }
 }

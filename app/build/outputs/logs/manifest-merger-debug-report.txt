@@ -4,6 +4,22 @@ ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprs
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\5f24c7bb235a72058b4c4e57b669d721\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\57d2d153ebf18ab2678282986a21fc99\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\2b969605f74573dc2d3f5c9db5d89957\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\817d19d8f1af60d03b780ce754f17436\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d35349329b301cb20cd3ef72ee0719eb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\250593b9098f89fda99c2b8ceecb4b9e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\ff1c79b071a2303f54ae97510fd388f8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\10d424f008cfacca401a2deacedba968\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\0c0a3dcd8cbddeb12fd67f44abbfb167\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\24f8984c1bad252513a02414a717f8fe\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\6f2ba42bef71895b3ec71a3fe6599876\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\58c31720d353d6d3f9fd6ffae5c80e49\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\4b6e204aa9a7ed84ffd566fa2484b5fc\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\9a85a9cb9680dec68b894453de2d89a4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\da55dd37583340260a98efc560db8db4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e660b2df8636ef2d98ae497998f01071\AndroidManifest.xml:17:1-22:12
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:2:1-43:12
@@ -87,6 +103,38 @@ uses-sdk
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\5f24c7bb235a72058b4c4e57b669d721\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\5f24c7bb235a72058b4c4e57b669d721\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\57d2d153ebf18ab2678282986a21fc99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\57d2d153ebf18ab2678282986a21fc99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\2b969605f74573dc2d3f5c9db5d89957\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\2b969605f74573dc2d3f5c9db5d89957\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\817d19d8f1af60d03b780ce754f17436\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\817d19d8f1af60d03b780ce754f17436\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d35349329b301cb20cd3ef72ee0719eb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\d35349329b301cb20cd3ef72ee0719eb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\250593b9098f89fda99c2b8ceecb4b9e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\250593b9098f89fda99c2b8ceecb4b9e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\ff1c79b071a2303f54ae97510fd388f8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\ff1c79b071a2303f54ae97510fd388f8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\10d424f008cfacca401a2deacedba968\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\10d424f008cfacca401a2deacedba968\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\0c0a3dcd8cbddeb12fd67f44abbfb167\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\0c0a3dcd8cbddeb12fd67f44abbfb167\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\24f8984c1bad252513a02414a717f8fe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\24f8984c1bad252513a02414a717f8fe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\6f2ba42bef71895b3ec71a3fe6599876\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\6f2ba42bef71895b3ec71a3fe6599876\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\58c31720d353d6d3f9fd6ffae5c80e49\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\58c31720d353d6d3f9fd6ffae5c80e49\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\4b6e204aa9a7ed84ffd566fa2484b5fc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\4b6e204aa9a7ed84ffd566fa2484b5fc\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\9a85a9cb9680dec68b894453de2d89a4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\9a85a9cb9680dec68b894453de2d89a4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\da55dd37583340260a98efc560db8db4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\da55dd37583340260a98efc560db8db4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e660b2df8636ef2d98ae497998f01071\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\vinod\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e660b2df8636ef2d98ae497998f01071\AndroidManifest.xml:20:5-44
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
 INJECTED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
