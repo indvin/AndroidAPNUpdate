@@ -68,7 +68,7 @@ ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprs
 	android:allowBackup
 		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:19:9-40
+		ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:19:9-53
 uses-library#com.symbol.emdk
 ADDED from C:\Vinod_Work\Android_example\EMDK-Android-Samples-master\ProfileGprsMgrSample1\app\src\main\AndroidManifest.xml:21:9-56
 	android:name
