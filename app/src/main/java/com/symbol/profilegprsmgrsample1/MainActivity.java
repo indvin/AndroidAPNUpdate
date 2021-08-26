@@ -6,6 +6,7 @@ package com.symbol.profilegprsmgrsample1;
 
 import java.io.StringReader;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.List;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -22,8 +23,10 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -143,6 +146,8 @@ public class MainActivity extends AppCompatActivity implements EMDKListener{
 
         addSyncButtonListener();
         checkForTheApplicationPreConditions();
+
+        getAPNFromContentResolver();
     }
 
     @Override
@@ -537,5 +542,19 @@ public class MainActivity extends AppCompatActivity implements EMDKListener{
     private void requestPermission(String permissionName, int permissionRequestCode) {
         ActivityCompat.requestPermissions(this,
                 new String[]{permissionName}, permissionRequestCode);
+    }
+
+    private void getAPNFromContentResolver() {
+        Cursor c = getApplicationContext().getContentResolver().query(Uri.parse("content://telephony/carriers/current"),null, null, null, null);
+        Log.e("MainActivity","getColumnNames: "+
+                Arrays.toString(c.getColumnNames())); //get the column names from here.
+        if (c.moveToFirst()){
+            do{
+                String data = c.getString(c.getColumnIndex("name")); //one of the column name to get the APN names.
+                Log.e("MainActivity","data: "+ data);
+
+            }while(c.moveToNext());
+        }
+        c.close();
     }
 }
