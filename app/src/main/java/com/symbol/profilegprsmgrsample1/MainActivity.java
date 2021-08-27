@@ -232,8 +232,7 @@ public class MainActivity extends AppCompatActivity implements EMDKListener{
                 "<parm name=\"CustomAccessPoint\" value=\"" + "n.ispsn" + "\"/>" +
                 "<parm name=\"CustomUserName\" value=\"" + "" + "\"/>" +
                 "<parm name=\"CustomPassword\" value=\"" + "" + "\"/>" +
-                "<parm name=\"CustomProtocol\" value=\"" + "3" + "\"/>" +
-                "<parm name=\"CustomRoamingProtocol\" value=\"" + "3" + "\"/>" +
+
                 "</characteristic>";
 
 
