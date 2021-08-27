@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements EMDKListener{
 
             modifyData[0] +=    "<parm name=\"GprsCarrier\" value=\"0\"/>" +
                     "<characteristic type=\"gprs-details\">" +
-                    "<parm name=\"ApnName\" value=\"" + "internet" + "\"/>" +
+                    "<parm name=\"ApnName\" value=\"" + "internet1" + "\"/>" +
                         "<parm name=\"ReplaceIfExisting\" value=\"" + 1 + "\"/>" +
                     "<parm name=\"MakeDefault\" value=\"" + 1 + "\"/>" +
                     "</characteristic>" ;
