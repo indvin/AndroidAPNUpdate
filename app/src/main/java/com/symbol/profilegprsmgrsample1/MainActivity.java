@@ -222,12 +222,19 @@ public class MainActivity extends AppCompatActivity implements EMDKListener{
                         "<parm name=\"GprsAction\" value=\"" + 1 + "\"/>";
 
 
-            modifyData[0] +=    "<parm name=\"GprsCarrier\" value=\"0\"/>" +
-                    "<characteristic type=\"gprs-details\">" +
-                    "<parm name=\"ApnName\" value=\"" + "internet1" + "\"/>" +
-                        "<parm name=\"ReplaceIfExisting\" value=\"" + 1 + "\"/>" +
-                    "<parm name=\"MakeDefault\" value=\"" + 1 + "\"/>" +
-                    "</characteristic>" ;
+        modifyData[0] +=    "<parm name=\"GprsCarrier\" value=\"0\"/>" +
+                "<characteristic type=\"gprs-details\">" +
+                "<parm name=\"ApnName\" value=\"" + "SPRINT internet" + "\"/>" +
+                "<parm name=\"ReplaceIfExisting\" value=\"" + 1 + "\"/>" +
+                "<parm name=\"MakeDefault\" value=\"" + 1 + "\"/>" +
+                "</characteristic>" +
+                "<characteristic type=\"custom-details\">" +
+                "<parm name=\"CustomAccessPoint\" value=\"" + "n.ispsn" + "\"/>" +
+                "<parm name=\"CustomUserName\" value=\"" + "" + "\"/>" +
+                "<parm name=\"CustomPassword\" value=\"" + "" + "\"/>" +
+                "<parm name=\"CustomProtocol\" value=\"" + "3" + "\"/>" +
+                "<parm name=\"CustomRoamingProtocol\" value=\"" + "3" + "\"/>" +
+                "</characteristic>";
 
 
 
