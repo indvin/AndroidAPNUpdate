@@ -19,7 +19,6 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light" >
 
-        <uses-library android:name="com.symbol.emdk" />
 
         <activity
             android:name="com.symbol.profilegprsmgrsample1.APNProfileActivity"
@@ -32,13 +31,19 @@
             android:name="com.symbol.profilegprsmgrsample1.MainActivity"
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
+
+        </activity>
+
+        <activity android:name="com.symbol.profilegprsmgrsample1.SimSelectionActivity"
+            android:label="Sim selction">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+        </activity>
     </application>
 
 </manifest>
